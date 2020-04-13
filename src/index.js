@@ -16,11 +16,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 // Variables globales
 let NewClientWindow
-let mainWindow // La ventana debe de tener un alcance global para cuando se elimine se queden limpios los recursos
+let mainWindow // La ventana debe de tener un alcance global para cuando se elimine se queden "limpios" los recursos
 
 app.on('ready', () => {
 
-
+    // voy a ver como poner con login.
+    // el programa principal solo va arrancar si el usuario se logea correctamente.
 
     mainWindow = new BrowserWindow({
         width: 800,
@@ -44,7 +45,7 @@ app.on('ready', () => {
     });
 
 });
-// es un arreglo de objetos. Cada objeto es una ventana.
+// es un arreglo de objetos.
 const tempalteMenu = [{
         label: 'Menu', // Titulo de la pestaña
         submenu: [ // este contiene los objetos de la ventana
@@ -86,8 +87,8 @@ const tempalteMenu = [{
 function createNewClientWindow() {
     // NewClientWindow es una variable global que cree más arriba.
     NewClientWindow = new BrowserWindow({
-        width: 300,
-        height: 200,
+        width: 400,
+        height: 300,
         //title: 'Nuevo producto'
         //titleBarStyle: 'customButtonsOnHover',frame: false,
     });
@@ -95,7 +96,7 @@ function createNewClientWindow() {
     NewClientWindow.setMenu(null); // Desactivo el boton de ventana que tiene por defecto.
 
     NewClientWindow.loadURL(url.format({
-            pathname: path.join(__dirname, 'views/new-product.html'),
+            pathname: path.join(__dirname, 'views/new-client.html'),
             protocol: 'file', // le digo con que tido de protocolo va a trabajar, en este caso va a ser un archivo.
             slashes: true
         }))

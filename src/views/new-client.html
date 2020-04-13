@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <script>
+        function REGISTRAR() {
+            return alert("REGISTRADO");
+        }
 
+        function CANCELAR() {
+            window.close();
+        }
+    </script>
 </head>
 
 <body>
@@ -12,8 +20,8 @@
     <form action="">
         <p>cualquier cosa: <input type="text"></p>
         <p>Fecha: <input type="DATE"></p>
-        <button>ACEPTAR</button>
-        <button>CANCELAR</button>
+        <input type="button" value="REGISTRAR" onclick="REGISTRAR()">
+        <input type="button" value="CANCELAR" onclick="CANCELAR()">
 
     </form>
 
